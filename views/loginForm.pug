@@ -1,0 +1,17 @@
+extends layout.pug
+
+//- Login form
+block content
+  h1.mt-5 Please sign in
+  form(method="POST")
+    .form-group
+      label.sr-only(for='username')
+      input#username.form-control(type='email', required, placeholder='Email address', name="username")
+    //.form-group.row
+    //  .col-xs-4
+    //    label(for='ex3')
+    //    input#ex3.form-control(type='password', required, placeholder='Password', name="password", align="center")
+    .form-group
+      label.sr-only(for='password')
+      input#password.form-control(type='password', required, placeholder='Password', name="password", size="40")
+    button.btn.btn-primary(type='submit') Sign In

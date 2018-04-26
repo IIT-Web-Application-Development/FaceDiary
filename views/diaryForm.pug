@@ -1,0 +1,25 @@
+extends layout.pug
+
+//- New Diary entry form
+block content
+  h1.mt-5= title
+  form(method="POST")
+    .form-group
+      label(for='timestamp')
+      //input#timestamp.form-control(type='text', required, placeholder='Enter timestamp', name="timestamp", value=title, readonly)
+      input#timestamp.form-control(type='text', required, placeholder='Enter timestamp', name="timestamp", value=diary.timestamp)
+    .form-group
+      label(for='comment')
+      input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
+    .form-group
+      label(for='picture')
+      input#picture.form-control(type='text', min='0', required, placeholder='Enter picture URL', name="picture", value=diary.picture)
+    .form-group
+      label(for='emotion')
+      input#emotion.form-control(type='text', min='0', required, placeholder='Enter emotion', name="emotion", value=diary.emotion)
+    .form-group
+      //label(for='userid')
+      label(for='userid')=user.username
+      //input#userid.form-control(type='text', min='0', required, placeholder='Enter userid', name="userid", value=user.username, readonly)
+      input#userid.form-control(type='text', min='0', required, placeholder='Enter userid', name="userid", value=diary.userid)
+    button.btn.btn-primary(type='submit') Submit

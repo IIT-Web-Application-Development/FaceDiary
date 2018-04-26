@@ -1,0 +1,26 @@
+extends layout.pug
+
+//- Display all diary entries 
+block content
+  h1.mt-5= user.username
+    a.btn.btn-primary(href='./facediary/new') New Entry
+  table.table
+    thead
+      tr
+        th(scope='col') Date
+        th(scope='col') Picture
+        th(scope='col') Emotion
+        th(scope='col') Comment
+        th(scope='col')
+    tbody
+      each diary in facediary
+        tr
+          td= diary.timestamp
+          td= diary.picture
+          td= diary.emotion
+          td= diary.comment
+          td
+            //-a.btn.btn-primary(href='./facediary/' + diary.id) Edit Comment
+            a.btn.btn-primary(href='./facediary/' + diary.id + '/update') Edit Comment
+            form(action='/facediary/' + diary.id + '/delete' method="POST")
+              button.btn.btn-danger(type='submit') Delete

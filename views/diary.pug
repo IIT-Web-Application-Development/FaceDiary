@@ -1,0 +1,10 @@
+extends layout.pug
+
+//- Display individual diary entry
+block content
+  h1.mt-5 #{diary.timestamp} 
+    a.btn.btn-primary(href='./' + diary.id + '/update') Edit
+  p Comment: #{diary.comment}
+  p Userid: #{diary.userid}
+  p Picture: #{diary.picture}
+  p Emotion: #{diary.emotion}
