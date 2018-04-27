@@ -16,7 +16,8 @@ block content
       each diary in facediary
         tr
           td= diary.timestamp
-          td= diary.picture
+          td
+            img(src=diary.picture alt='picture' width='100' height='100')
           td= diary.emotion
           td= diary.comment
           td
