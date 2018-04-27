@@ -2,7 +2,6 @@ var express = require('express');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-/*var mustacheExpress = require('mustache-express');*/
 var sortJsonArray = require('sort-json-array');
 let Diary = require('./models/diary');
 mongoose.connect('mongodb://localhost/test');
@@ -26,7 +25,7 @@ app.set('views', __dirname + '/views');
 
 app.use('/api/facediary', facediary);
 
-app.use(session({secret: "this is the secret"}));
+app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
