@@ -1,9 +1,11 @@
 extends layout.pug
 
 block scripts
+  // Tiny scripts- 1KB each - that are needed right away, thus in the head
   script(type='text/javascript' src='/js/analyzePhoto.js')
   script(type='text/javascript' src='/js/retakePhoto.js')
   script(type='text/javascript' src='/js/makeEntry.js')
+  script(type='text/javascript' src='/js/getCamera.js')  
 
 //- New Diary entry form
 block content
@@ -22,3 +24,10 @@ block content
     input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
     
     button.btn.btn-primary(type='submit') Submit 
+      
+  script.
+    getCamera()
+
+block append scripts2
+  // Huge script (701 KB), so placed at the bottom. Not needed until uploading
+  script(src='/js/azure-storage.blob.min.js')
