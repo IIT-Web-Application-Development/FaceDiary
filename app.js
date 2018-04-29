@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path'); 
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -20,8 +21,9 @@ app.disable('etag');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'pug')
-app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/api/facediary', facediary);
 
