@@ -23,9 +23,9 @@ function makeEntry() {
 							console.log(photoName);
 							document.getElementById('camera').hidden = true;
 							document.getElementById('emotion').value = document.getElementById('results').innerHTML;
-							document.getElementById('date').value = photoName;
+							//document.getElementById('date').value = timeStamp.toLocaleDateString();
+							document.getElementById('date').value = timeStamp.toLocaleString();
 							document.getElementById('picture-url').value = blobUri + "/face-container/" + photoName;
-							console.log(document.getElementById('picture-url').value);
 					}
 		});
 	});

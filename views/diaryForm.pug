@@ -27,11 +27,8 @@ block content
       input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
       input#user-id(type='hidden', name='userid', value=user.id)
       input#emotion(type='hidden', name='emotion' value=diary.emotion)
-
-      // FIX
-      input#picture-url(type='hidden', name='picture-url', value=diary.picture)      
-      input#date(type='hidden', name='entry-date' value=diary.timestamp)
-      // FIX
+      input#picture-url(type='hidden', name='picture', value=diary.picture)      
+      input#date(type='hidden', name='timestamp' value=diary.timestamp)
 
       button.btn.btn-primary(type='submit') Submit
       
