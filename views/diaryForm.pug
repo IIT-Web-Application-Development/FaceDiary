@@ -2,6 +2,7 @@ extends layout.pug
 
 block scripts
   // Tiny scripts- 1KB each - that are needed right away, thus in the head
+  link(rel='stylesheet' href='/css/main.css')
   script(type='text/javascript' src='/js/analyzePhoto.js')
   script(type='text/javascript' src='/js/retakePhoto.js')
   script(type='text/javascript' src='/js/makeEntry.js')
@@ -11,8 +12,8 @@ block scripts
 block content
   //h1= user.id
   h1.mt-5= title
-    .mb-1
-      video#camera(autoplay='' width='320' height='240')
+    #camera-and-photo-container.mb-1
+      video#camera.mr-2(autoplay='' width='320' height='240')
       canvas#photoContainer(width='320' height='240')
     div
       button#capture Take Photo

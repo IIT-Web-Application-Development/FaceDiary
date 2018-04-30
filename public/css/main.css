@@ -1,0 +1,16 @@
+#camera-and-photo-container {
+	border: 2px double black;
+	padding: 0.25em;
+}
+
+#camera {
+	border: 12px dashed gainsboro;
+	box-shadow: 2px 2px 3px black;
+	box-sizing: content-box;
+}
+
+#photoContainer {
+	border: 12px ridge rgb(212, 175, 55);
+	box-shadow: 2px 2px 3px black;	
+	box-sizing: content-box;
+}
