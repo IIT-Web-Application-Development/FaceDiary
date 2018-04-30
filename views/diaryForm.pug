@@ -18,12 +18,17 @@ block content
       button#retakePhoto(onclick='retakePhoto()') Retake
       button#usePhoto(onclick='analyzePhoto()') Use Photo
       button#makeEntry(onclick='makeEntry()') Save Entry
-    #results
-
-    label(for='comment')
-    input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
-    
-    button.btn.btn-primary(type='submit') Submit 
+    form(method="POST")
+      #results-container(hidden='true')
+        | Feeling: 
+        p#results.d-inline
+      label(for='comment')
+      input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
+      input#user-id(type='hidden', name='userid', value=user.id)
+      input#emotion(type='hidden', name='emotion' value=diary.emotion)
+      input#picture(type='hidden', name='pictureURL', value=diary.picture)      
+      input#date(type='hidden', name='entry-date' value=diary.timestamp)
+      button.btn.btn-primary(type='submit') Submit 
       
   script.
     getCamera()
