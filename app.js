@@ -86,7 +86,7 @@ app.get('/facediary/new', require('connect-ensure-login').ensureLoggedIn(), func
 app.post('/facediary/new', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
   let diaryToCreate = new Diary(req.body);
   diaryToCreate.save(function(err, diary){
-    res.redirect('/facediary/' + diary.id);
+    res.redirect("/");
   });
 });
 
