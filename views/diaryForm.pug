@@ -9,6 +9,7 @@ block scripts
 
 //- New Diary entry form
 block content
+  //h1= user.id
   h1.mt-5= title
     .mb-1
       video#camera(autoplay='' width='320' height='240')
@@ -26,9 +27,13 @@ block content
       input#comment.form-control(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
       input#user-id(type='hidden', name='userid', value=user.id)
       input#emotion(type='hidden', name='emotion' value=diary.emotion)
-      input#picture(type='hidden', name='pictureURL', value=diary.picture)      
+
+      // FIX
+      input#picture-url(type='hidden', name='picture-url', value=diary.picture)      
       input#date(type='hidden', name='entry-date' value=diary.timestamp)
-      button.btn.btn-primary(type='submit') Submit 
+      // FIX
+
+      button.btn.btn-primary(type='submit') Submit
       
   script.
     getCamera()
