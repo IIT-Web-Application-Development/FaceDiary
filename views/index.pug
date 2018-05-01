@@ -2,26 +2,25 @@ extends layout.pug
 
 //- Display all diary entries 
 block content
-  h1.mt-5= user.username
+  h1.mt-5(class='font-weight-bold')= user.username
     a.btn.btn-primary(href='./facediary/new') New Entry
   table.table
     thead
       tr
-        th(scope='col') Date
-        th(scope='col') Picture
-        th(scope='col') Emotion
-        th(scope='col') Comment
+        th(scope='col', class='text-center') Date
+        th(scope='col', class='text-center') Picture
+        th(scope='col', class='text-center') Emotion
+        th(scope='col', class='text-center') Comment
         th(scope='col')
     tbody
       each diary in facediary
         tr
           td= diary.timestamp
           td
-            img(src=diary.picture alt='picture' width='100' height='100')
+            img(src=diary.picture alt='picture' width='320' height='240')
           td= diary.emotion
           td= diary.comment
           td
-            //-a.btn.btn-primary(href='./facediary/' + diary.id) Edit Comment
             a.btn.btn-primary(href='./facediary/' + diary.id + '/update') Edit Comment
             form(action='/facediary/' + diary.id + '/delete' method="POST")
               button.btn.btn-danger(type='submit') Delete

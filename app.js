@@ -102,7 +102,7 @@ app.post('/facediary/:id/update', require('connect-ensure-login').ensureLoggedIn
   let id = req.params["id"]
   Diary.findOneAndUpdate({_id: id}, req.body, function(err, diary) {
     if (err) return next(err);
-    res.redirect('/facediary/' + id);
+    res.redirect("/");
   });
 });
 
