@@ -1,6 +1,7 @@
 var records = [
     { id: 1, username: 'andrey.m.drozd@gmail.com', password: 'drozd', displayName: 'Andrey', emails: [ { value: 'andrey.m.drozd@gmail.com' } ] }
   , { id: 2, username: 'rpcynowa@gmail.com', password: 'cynowa', displayName: 'Rob', emails: [ { value: 'rpcynowa@gmail.com' } ] }
+  , { id: 3, username: 'bzumhagen@iit.edu', password: 'zumhagen', displayName: 'Ben', emails: [ { value: 'bzumhagen@iit.edu' } ] }
 ];
 
 exports.findById = function(id, cb) {
