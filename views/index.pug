@@ -15,12 +15,12 @@ block content
     tbody
       each diary in facediary
         tr
-          td= diary.timestamp
-          td
+          td(class='text-center')= diary.timestamp
+          td(class='text-center')
             img(src=diary.picture alt='picture' width='320' height='240')
-          td= diary.emotion
-          td= diary.comment
-          td
-            a.btn.btn-primary(href='./facediary/' + diary.id + '/update') Edit Comment
+          td(class='text-center')= diary.emotion
+          td(class='text-center')= diary.comment
+          td(class='text-center')
+            a.btn.btn-primary.btn-block(href='./facediary/' + diary.id + '/update') Edit Comment
             form(action='/facediary/' + diary.id + '/delete' method="POST")
-              button.btn.btn-danger(type='submit') Delete
+              button.btn.btn-danger.btn-block(type='submit') Delete

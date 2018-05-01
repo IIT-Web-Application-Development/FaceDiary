@@ -66,7 +66,7 @@ app.post('/login',
 
 // Get all diary entries
 app.get('/', require('connect-ensure-login').ensureLoggedIn(), function (req, res) {
-  Diary.find(function (err, facediary) {
+  Diary.find({userid: req.user.id}, function (err, facediary) {
     if (err) return console.error(err);
     sortJsonArray(facediary, 'timestamp', 'des');
     console.log(facediary);
