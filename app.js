@@ -90,7 +90,7 @@ app.post('/facediary/new', require('connect-ensure-login').ensureLoggedIn(), fun
 app.get('/facediary/:id/update', require('connect-ensure-login').ensureLoggedIn(), function (req, res) {
   let id = req.params["id"]
   Diary.findOne({_id: id}, function(err, diary) {
-    res.render('diaryForm', { title: diary.timestamp, user: req.user, diary: diary });
+    res.render('commentForm', { title: diary.timestamp, user: req.user, diary: diary });
   });
 });
 

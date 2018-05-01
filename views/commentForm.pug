@@ -1,0 +1,15 @@
+extends layout.pug
+
+block scripts
+
+//- Comment edit form
+block content
+  h1.mt-5= title
+  form(method="POST")
+    .form-group
+      input#comment.form-control.mx-auto.mt-3(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
+      input#user-id(type='hidden', name='userid', value=user.id)
+      input#emotion(type='hidden', name='emotion' value=diary.emotion)
+      input#picture-url(type='hidden', name='picture', value=diary.picture)      
+      input#date(type='hidden', name='timestamp' value=diary.timestamp)
+    button.btn.btn-primary(type='submit') Submit
