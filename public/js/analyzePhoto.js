@@ -18,8 +18,9 @@ function analyzePhoto () {
 					let arr = Object.values(emotionAttr);
 					let max = Math.max(...arr);
 					let predominantFeeling = Object.keys(emotionAttr).find(key => emotionAttr[key] === max);
-					document.getElementById("results").innerHTML = predominantFeeling;
-					document.getElementById("results-container").hidden = false;
+					document.getElementById('results').innerHTML = predominantFeeling;
+					document.getElementById('uploadPhoto').hidden = false;
+					document.getElementById('results-container').hidden = false;
 			});
 	});
 }

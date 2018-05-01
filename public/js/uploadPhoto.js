@@ -1,4 +1,4 @@
-function makeEntry() {
+function uploadPhoto() {
 	const user = document.getElementById('user-id').value.toString();
 	const account = {
 		name: "facediary",
@@ -17,13 +17,13 @@ function makeEntry() {
 			photoFile, 
 			(error, result, response) => {
 					if(error) {
-							console.log(error);
-							// TODO - Add empty div that gets filled upon error.
+							alert("There was an error uploading your selfie. Refresh the page and try again.");
 					} else if (result) {
 							console.log(photoName);
 							document.getElementById('camera').hidden = true;
+							document.getElementById('comment').hidden = false;
+							document.getElementById('finish-entry').hidden = false;
 							document.getElementById('emotion').value = document.getElementById('results').innerHTML;
-							//document.getElementById('date').value = timeStamp.toLocaleDateString();
 							document.getElementById('date').value = timeStamp.toLocaleString();
 							document.getElementById('picture-url').value = blobUri + "/face-container/" + photoName;
 					}

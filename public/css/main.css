@@ -15,6 +15,10 @@
 	box-sizing: content-box;
 }
 
+#results-container {
+	font-size: 0.70em;
+}
+
 #comment {
 	width: 35%;
 }

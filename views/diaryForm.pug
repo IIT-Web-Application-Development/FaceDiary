@@ -5,34 +5,33 @@ block scripts
   link(rel='stylesheet' href='/css/main.css')
   script(type='text/javascript' src='/js/analyzePhoto.js')
   script(type='text/javascript' src='/js/retakePhoto.js')
-  script(type='text/javascript' src='/js/makeEntry.js')
+  script(type='text/javascript' src='/js/uploadPhoto.js')
   script(type='text/javascript' src='/js/getCamera.js')  
 
 //- New Diary entry form
 block content
-  //h1= user.id
-  h1.mt-5= title
-    #camera-and-photo-container.mb-1
+  h1.display-4.mt-3 Make an entry
+    #camera-and-photo-container.mt-3
       video#camera.mr-3(autoplay='' width='320' height='240')
       canvas#photoContainer(width='320' height='240')
-    div.btn-group.btn-group-lg
+    div.btn-group.btn-group-lg.mt-3
       button#capture.btn Take Photo
       button#retakePhoto.btn(onclick='retakePhoto()') Retake
       button#usePhoto.btn(onclick='analyzePhoto()') Use Photo
-    div
-      button#makeEntry.btn.btn-lg.btn-secondary(onclick='makeEntry()') Save Entry
-    form(method="POST")
+    div.mt-2
       #results-container(hidden='true')
-        | Feeling: 
+        p.d-inline Feeling - 
         p#results.d-inline
-      input#comment.form-control.mx-auto(type='text', placeholder='Enter comment', name="comment", value=diary.comment)
+      button#uploadPhoto.btn.btn-lg.btn-secondary.mt-3(onclick='uploadPhoto()' hidden='true') Start Entry
+    form(method="POST").mt-2
+      input#comment.form-control.mx-auto.mt-3(type='text', placeholder='Enter comment', name="comment", value=diary.comment hidden='true')
 
       input#user-id(type='hidden', name='userid', value=user.id)
       input#emotion(type='hidden', name='emotion' value=diary.emotion)
       input#picture-url(type='hidden', name='picture', value=diary.picture)      
       input#date(type='hidden', name='timestamp' value=diary.timestamp)
 
-      button.btn.btn-lg.btn-primary(type='submit') Fnish Entry
+      button#finish-entry.btn.btn-lg.btn-primary.mt-3(type='submit' hidden='true') Finish Entry
       
   script.
     getCamera()

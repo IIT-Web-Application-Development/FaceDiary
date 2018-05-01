@@ -76,11 +76,7 @@ app.get('/', require('connect-ensure-login').ensureLoggedIn(), function (req, re
 
 // Create diary entry
 app.get('/facediary/new', require('connect-ensure-login').ensureLoggedIn(), function (req, res) {
-  var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var CurrentDateTime = date+'-'+time;
-  res.render('diaryForm', { title: CurrentDateTime, user: req.user, diary: {} });
+  res.render('diaryForm', { user: req.user, diary: {} });
 });
 
 app.post('/facediary/new', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
