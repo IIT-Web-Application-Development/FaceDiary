@@ -3,7 +3,7 @@ function getCamera () {
 		const photoContainer = document.getElementById('photoContainer');
 		const context = photoContainer.getContext('2d');
 		const captureButton = document.getElementById('capture');
-		const useButton = document.getElementById("use");
+		const useButton = document.getElementById('use');
 		const constraints = {
 			video: true,
 		};
